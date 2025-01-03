@@ -4,7 +4,7 @@ class DBManager
 
     private function open()
     {
-        $link = mysqli_connect("127.0.0.1","qysug","9@s659R9","sepci") or die('Error connecting to Data Base');
+        $link = mysqli_connect("127.0.0.1","root","","sepci") or die('Error connecting to Data Base');
         return $link;
     }
 

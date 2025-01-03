@@ -11,10 +11,10 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
     <link rel="stylesheet" href="css/Capacitate.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/header.css" />
 
 
     <script src="https://kit.fontawesome.com/12dc2fa4a1.js" crossorigin="anonymous"></script>
@@ -22,15 +22,18 @@
 
 <body>
     <section class="Main_header">
-        <header>
+        <header class="Logo_header">
             <img src="img/logoEducacion.png" class="img1" />
             <img src="img/Logo-TecNM.png" class="img2" />
             <img src="img/logo-Itmorelia.png" class="img3" />
-            <img src="img/logo-SEPCI.png" class="img4" />
+            <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
         </header>
-        <header class="Menu">
-            <div class="contenedor_menu">
-                <nav>
+        <header class="Menu_header">
+            <div class="contenedor_menu" id="contenedor_menu">
+                <button class="hamburger" id="hamburger">
+                    &#9776; 
+                </button>
+                <nav class="Menu_nav" id="Menu_nav">
                     <a href="index.php">Inicio</a>
                     <a class="active" href="Capacitate.php">Capacitate</a>
                     <a href="Documentos.php">Documentos</a>
@@ -119,7 +122,7 @@
             </p>
         </div>
     </footer>
-
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
