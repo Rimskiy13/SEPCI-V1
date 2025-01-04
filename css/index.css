@@ -1,18 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
-.carousel {
-  height: 550px;
-}
-
-.slide {
-  height: 550px;
-}
-
-.carousel-item {
-  height: 550px;
-}
-
 .titulo {
   display: flex;
   justify-content: center;

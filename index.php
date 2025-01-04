@@ -22,9 +22,11 @@
     <link rel="shortcut icon" href="img/logo-SEPCI.jpg" type="image/x-icon" />
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/Slider.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/header.css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
 </head>
@@ -54,38 +56,34 @@
             </div>
         </header>
     </section>
-
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
+    
+    <div class="Slider">
+        <div class="list">
             <?php
-            include_once 'php/DBManager/endPointSlider.php';
-            while ($row = $data->fetch_assoc()) {
-                ?>
-            <div class="carousel-item active">
-                <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" class="d-block w-100" alt="..." />
-            </div>
+                include_once 'php/DBManager/endPointSlider.php';
+                $sliderImg = $data->fetch_all(MYSQLI_ASSOC);    
+                foreach ($sliderImg as $row) {
+            ?>
+                <div class="item">
+                    <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" alt="">
+                </div>
             <?php
-            }
+                }
             ?>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <?php
+            foreach ($sliderImg as $key=>$row) {
+            ?>
+                <li class="<?php echo $key === 0 ? 'active' : ''; ?>"></li>
+            <?php
+                }
+            ?>
+        </ul>
     </div>
 
     <div class="titulo">
@@ -233,6 +231,7 @@
         </div>
     </footer>
     <script src="js/menu.js"></script>
+    <script src="js/Slider.js"></script>
 </body>
 
 <!-- Ventana Modal -->
