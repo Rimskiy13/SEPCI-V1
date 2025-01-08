@@ -21,9 +21,9 @@
     <link rel="icon" href="img/logo-SEPCI.png" />
     <link rel="shortcut icon" href="img/logo-SEPCI.jpg" type="image/x-icon" />
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/Slider.css" />
+    <link rel="stylesheet" href="css/AboutUs.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
@@ -85,91 +85,92 @@
             ?>
         </ul>
     </div>
+            
 
-    <div class="titulo">
-        <h2>Subcomite de Etica y de Prevencion de Conflictos de Interes</h2>
-    </div>
-
-    <div class="qsomos">
-        <div class="qsomos_text">
-            <h3>¿Quienes somos?</h3>
-            <div class="sub"></div>
-            <div class="qsomos_info">
-                <?php
-                include_once 'php/DBManager/endPointAboutUs.php';
-                $row = $data->fetch_row();
-                echo $row[1];
-                ?>
-            </div>
-            <div class="qsomos_boton">
-                <!--<a href="<?php echo 'pdf/About Us/' . $row[2]; ?>" target="_blank">Ver Mas</a>-->
-                <a href="<?php echo 'pdf/About Us/' . $row[2]; ?>" download>Ver Mas</a>
-            </div>
+    <div class="AboutUs">
+        <div class="TitleABS">
+            <h2>Subcomité de Ética y de Prevención de Conflictos de Interés</h2>
         </div>
-        <div class="qsomos_img">
-            <img src="img/logo-SEPCI.png" alt="" />
-        </div>
-    </div>
-    <div class="titulo">
-        <h2>Directorio de Miembros SEPCI</h2>
-    </div>
-    <main>
-        <div class="miembrosImpr">
-            <div class="container1">
-                <?php
-                include_once 'php/DBManager/endPointMembersFrom.php';
-                while ($row = $data->fetch_assoc()) {
-                    $color = '';
-
-                    switch ($row['rol']) {
-                        case 'Presidencia':
-                            $color = '#1b396a'; // Color para 'Precidencia'
-                            break;
-                        case 'Presidencia (Suplente)':
-                            $color = '#1b396a'; // Color para 'Precidencia'
-                            break;
-                        case 'Persona Asesora':
-                            $color = '#be9650'; // Color para 'Persona Asesora'
-                            break;
-                        case 'Persona Consejera':
-                            $color = '#be9650'; // Color para 'Persona Consejera'
-                            break;
-                        default:
-                            $color = '#741731'; // Color predeterminado para miembros
-                    }
+        <div class="ContentABS">
+            <div class="InfoABS">
+                <h3>¿Quiénes somos?</h3>
+                <div class="TextABS">
+                    <?php
+                        include_once 'php/DBManager/endPointAboutUs.php';
+                        $row = $data->fetch_row();
+                        echo $row[1];
                     ?>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
-                    data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
-                    data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
-                    data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
-
-                    <div class="carta" style="background-color: <?php echo $color; ?>;">
-                        <br>
-                        <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
-                        <br>
-                        <div class="Nombres">
-                            <h3>
-                                <?php echo $row['names'];
-                                    echo ' ';
-                                    echo $row['middle_name'];
-                                    echo ' ';
-                                    echo $row['last_name']; ?>
-                            </h3>
-                        </div>
-                        <div class="Nombres2">
-                            <h5>
-                                <?php echo $row['rol']; ?>
-                            </h5>
-                        </div>
-                    </div>
-                </a>
-
-                <?php
-                }
-                ?>
+                </div>
+                <div class="ButtonABS">
+                    <a href="<?php echo 'pdf/About Us/' . $row[2]; ?>" target="_blank">Conocenos</a>
+                </div>
+            </div>
+            <div class="qsomos_img">
+                <img src="img/logo-SEPCI.png" alt="" />
             </div>
         </div>
-    </main>
+    </div>
+    
+    
+    <div class="Directory">
+        <div class="titulo">
+            <h2>Directorio de Miembros Del Subcomite</h2>
+        </div>
+            <div class="miembrosImpr">
+                <div class="container1">
+                    <?php
+                    include_once 'php/DBManager/endPointMembersFrom.php';
+                    while ($row = $data->fetch_assoc()) {
+                        $color = '';
+
+                        switch ($row['rol']) {
+                            case 'Presidencia':
+                                $color = '#1b396a'; // Color para 'Precidencia'
+                                break;
+                            case 'Presidencia (Suplente)':
+                                $color = '#1b396a'; // Color para 'Precidencia'
+                                break;
+                            case 'Persona Asesora':
+                                $color = '#be9650'; // Color para 'Persona Asesora'
+                                break;
+                            case 'Persona Consejera':
+                                $color = '#be9650'; // Color para 'Persona Consejera'
+                                break;
+                            default:
+                                $color = '#741731'; // Color predeterminado para miembros
+                        }
+                        ?>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
+                        data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
+                        data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
+                        data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
+
+                        <div class="carta" style="background-color: <?php echo $color; ?>;">
+                            <br>
+                            <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
+                            <br>
+                            <div class="Nombres">
+                                <h3>
+                                    <?php echo $row['names'];
+                                        echo ' ';
+                                        echo $row['middle_name'];
+                                        echo ' ';
+                                        echo $row['last_name']; ?>
+                                </h3>
+                            </div>
+                            <div class="Nombres2">
+                                <h5>
+                                    <?php echo $row['rol']; ?>
+                                        </h5>
+                                </div>
+                            </div>
+                        </a>
+
+                    <?php } ?>
+                </div>
+            </div>
+    </div>
+
 
     <div class="titulo">
         <h2>DOCUMENTOS DEL SEPCI</h2>
@@ -265,7 +266,7 @@
                     <div class="mb-3">
                         <label for="funcion" class="form-label">Funcion que Ejerce:</label>
                         <div class="button_funcion">
-                            <a href="#" id="redireccionarBtn" target="_blank">Función</a>
+                            <a href="#" id="redireccionarBtn">Función</a>
                         </div>
                     </div>
                 </form>

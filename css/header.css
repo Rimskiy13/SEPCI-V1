@@ -2,6 +2,12 @@
   font-family: "Roboto", sans-serif;
 }
 
+/*
+.Main_header{
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+}**/
 
 .Logo_header {
   display: flex;
