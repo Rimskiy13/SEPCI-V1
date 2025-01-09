@@ -1,0 +1,186 @@
+/* ### Estilo general del directorio ### */
+.Directory {
+    text-align: center;
+    padding: 20px;
+}
+
+.TitleMembers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+}
+
+.TitleMembers h2 {
+    font-family: "Roboto", sans-serif;
+    color: #741731;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    width: 60%;
+}
+
+/* ### Estilo de las filas de tarjetas ### */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.row a {
+    text-decoration: none;
+}
+
+/* ### Estilo general para las tarjetas ### */
+.card-1, .card-2, .card-3, .card-4 {
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    color: white;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    position: relative; /* Para contenido interno como imágenes */
+    overflow: hidden; /* Para evitar que contenido desborde */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-1 img, .card-2 img, .card-3 img, .card-4 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+/* ### Colores por rol (puedes personalizar estos colores) ### */
+.card-1 {
+    background-color: #1B396A; /* Presidencia */
+}
+
+.card-2 {
+    background-color: #1B396A; /* Secretaría */
+}
+
+.card-3 {
+    background-color: #741731; /* Miembro */
+}
+
+.card-4 {
+    background-color: #708FC0; /* Persona */
+}
+
+/* ### Estilo de los nombres ### */
+.Nombres h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+}
+
+.Nombres2 h5 {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    margin-top: 5px;
+    color: white;
+    opacity: 0.8; /* Opcional: para diferenciar del nombre principal */
+}
+
+/* ### Estilo de la imagen principal de la tarjeta ### */
+.card-1 img, 
+.card-2 img, 
+.card-3 img, 
+.card-4 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    overflow: hidden; /* Evita que la imagen desborde */
+}
+
+/* ### Responsividad ### */
+
+/* ### Tablets (pantallas medianas) ### */
+@media (max-width: 768px) {
+    .TitleMembers h2 {
+        font-size: 32px; /* Reduce el tamaño del título */
+    }
+
+    .card-1, .card-2, .card-3, .card-4 {
+        width: 250px; /* Ajusta el ancho de las tarjetas */
+        height: 220px; /* Ajusta la altura de las tarjetas */
+    }
+
+    .Nombres h3 {
+        font-size: 18px; /* Reduce el tamaño del texto */
+    }
+
+    .Nombres2 h5 {
+        font-size: 14px;
+    }
+}
+
+/* ### Móviles (pantallas pequeñas) ### */
+@media (max-width: 480px) {
+    .TitleMembers h2 {
+        font-size: 24px; /* Más pequeño para dispositivos móviles */
+    }
+
+    .row {
+        flex-direction: column; /* Cambia el diseño a una sola columna */
+    }
+
+    .card-1, .card-2, .card-3, .card-4 {
+        width: 90%; /* Usa el 90% del ancho de la pantalla */
+        height: auto; /* Ajusta la altura automáticamente */
+        margin: 10px auto; /* Centra las tarjetas */
+    }
+
+    .Nombres h3 {
+        font-size: 16px; /* Reduce aún más el tamaño del texto */
+    }
+
+    .Nombres2 h5 {
+        font-size: 12px;
+    }
+}   
+
+
+/* #####################  Modal Para los miembros del subcomite #####################*/
+
+.imagen-recuadrov {
+    display: flex;
+    width: 300%;
+    /* Elige el tamaño que prefieras */
+    height: auto;
+    object-fit: cover;
+    /* Para mantener la proporción de la imagen */
+    border-radius: 10%;
+    margin: 0;
+    padding: 0;
+}
+
+.button_funcion a {
+    text-decoration: none;
+    background-color: rgba(27, 57, 106, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 12px;
+}
+
+.imagen-recuadro {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}

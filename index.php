@@ -24,15 +24,16 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/Slider.css" />
     <link rel="stylesheet" href="css/AboutUs.css" />
+    <link rel="stylesheet" href="css/Members.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/footer.css" />
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
 </head>
 
 <body>
-    <section class="Main_header">
+    <!-- #######################  Logos y Encabezado ####################### -->
+    <section class="Main_header">    
         <header>
             <div class="Logo_header">
                 <img src="img/logoEducacion.png" class="img1" />
@@ -40,7 +41,7 @@
                 <img src="img/logo-Itmorelia.png" class="img3" />
                 <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
             </div>
-            <div class="Menu_header">
+            <div class="Menu_header">            
                 <div class="contenedor_menu" id="contenedor_menu">
                     <button class="hamburger" id="hamburger">
                         &#9776; 
@@ -57,6 +58,7 @@
         </header>
     </section>
     
+    <!-- #######################  Slider ####################### -->
     <div class="Slider">
         <div class="list">
             <?php
@@ -86,7 +88,7 @@
         </ul>
     </div>
             
-
+    <!-- #######################  Seccion Acera de Nosotros ####################### -->
     <div class="AboutUs">
         <div class="TitleABS">
             <h2>Subcomité de Ética y de Prevención de Conflictos de Interés</h2>
@@ -111,67 +113,57 @@
         </div>
     </div>
     
-    
+    <!-- #######################  Directorio de miembros ####################### -->
     <div class="Directory">
-        <div class="titulo">
-            <h2>Directorio de Miembros Del Subcomite</h2>
-        </div>
-            <div class="miembrosImpr">
-                <div class="container1">
-                    <?php
-                    include_once 'php/DBManager/endPointMembersFrom.php';
-                    while ($row = $data->fetch_assoc()) {
-                        $color = '';
+    <div class="TitleMembers">
+        <h2>Directorio de Miembros Del Subcomite</h2>   
+    </div>
 
-                        switch ($row['rol']) {
-                            case 'Presidencia':
-                                $color = '#1b396a'; // Color para 'Precidencia'
-                                break;
-                            case 'Presidencia (Suplente)':
-                                $color = '#1b396a'; // Color para 'Precidencia'
-                                break;
-                            case 'Persona Asesora':
-                                $color = '#be9650'; // Color para 'Persona Asesora'
-                                break;
-                            case 'Persona Consejera':
-                                $color = '#be9650'; // Color para 'Persona Consejera'
-                                break;
-                            default:
-                                $color = '#741731'; // Color predeterminado para miembros
-                        }
+    <div class="row">
+        <?php
+            include_once 'php/DBManager/endPointMembersFrom.php';
+            $datas = $data->fetch_all(MYSQLI_ASSOC);
+
+            // Define un mapeo de roles a clases de tarjeta
+            $rolesMapping = [
+                'Presidencia' => 'card-1',
+                'Secretaría' => 'card-2',
+                'Miembro' => 'card-3',
+                'Persona' => 'card-4'
+            ];
+
+            foreach ($datas as $row) {
+                foreach ($rolesMapping as $roleKey => $cardClass) {
+                    if (str_contains($row['rol'], $roleKey)) {
                         ?>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
-                        data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
-                        data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
-                        data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
+                            data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
+                            data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
+                            data-imagen="<?php echo "img/Integrantes/" . $row["root_image"]; ?>">
 
-                        <div class="carta" style="background-color: <?php echo $color; ?>;">
-                            <br>
-                            <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
-                            <br>
-                            <div class="Nombres">
-                                <h3>
-                                    <?php echo $row['names'];
-                                        echo ' ';
-                                        echo $row['middle_name'];
-                                        echo ' ';
-                                        echo $row['last_name']; ?>
-                                </h3>
-                            </div>
-                            <div class="Nombres2">
-                                <h5>
-                                    <?php echo $row['rol']; ?>
-                                        </h5>
+                            <div class="<?php echo $cardClass; ?>">
+                                <img src="<?php echo "img/Integrantes/" . $row["root_image"]; ?>" alt="">
+                                <div class="Nombres">
+                                    <h3>
+                                        <?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>
+                                    </h3>
+                                </div>
+                                <div class="Nombres2">
+                                    <h5>
+                                        <?php echo $row['rol']; ?>
+                                    </h5>
                                 </div>
                             </div>
                         </a>
-
-                    <?php } ?>
-                </div>
-            </div>
+                        <?php
+                    }
+                }
+            }
+        ?>
     </div>
-
-
+</div>
+            
+    <!-- #######################  Seccion de documentos ####################### -->
     <div class="titulo">
         <h2>DOCUMENTOS DEL SEPCI</h2>
     </div>
@@ -194,6 +186,7 @@
         ?>
     </div>
 
+    <!-- #######################  Pie de pagina ####################### -->
     <footer class="footer">
         <div class="container">
             <div class="text">
@@ -235,12 +228,13 @@
     <script src="js/Slider.js"></script>
 </body>
 
-<!-- Ventana Modal -->
+
+<!-- #######################  Modal para la seccion del directorio de miembros ####################### -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Ventana emergente</h5>
+                <h5 class="modal-title" id="myModalLabel">Miembro SEPCI</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
