@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/Slider.css" />
     <link rel="stylesheet" href="css/AboutUs.css" />
     <link rel="stylesheet" href="css/Members.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/Index.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
@@ -58,7 +58,7 @@
         </header>
     </section>
     
-    <!-- #######################  Slider ####################### -->
+    <!-- #######################  Slider  ####################### -->
     <div class="Slider">
         <div class="list">
             <?php
@@ -88,7 +88,7 @@
         </ul>
     </div>
             
-    <!-- #######################  Seccion Acera de Nosotros ####################### -->
+    <!-- #######################  Seccion Acera de Nosotros  ####################### -->
     <div class="AboutUs">
         <div class="TitleABS">
             <h2>Subcomité de Ética y de Prevención de Conflictos de Interés</h2>
@@ -107,7 +107,7 @@
                     <a href="<?php echo 'pdf/About Us/' . $row[2]; ?>" target="_blank">Conocenos</a>
                 </div>
             </div>
-            <div class="qsomos_img">
+            <div class="ImgABS">
                 <img src="img/logo-SEPCI.png" alt="" />
             </div>
         </div>
@@ -115,27 +115,19 @@
     
     <!-- #######################  Directorio de miembros ####################### -->
     <div class="Directory">
-    <div class="TitleMembers">
-        <h2>Directorio de Miembros Del Subcomite</h2>   
-    </div>
-
-    <div class="row">
+        <div class="TitleMembers">
+            <h2>Directorio de Miembros Del Subcomite</h2>   
+        </div>
         <?php
             include_once 'php/DBManager/endPointMembersFrom.php';
             $datas = $data->fetch_all(MYSQLI_ASSOC);
+            $roles = ['Presidencia' => 'card-1', 'Secretaría' => 'card-2', 'Miembro' => 'card-3', 'Persona' => 'card-4'];
 
-            // Define un mapeo de roles a clases de tarjeta
-            $rolesMapping = [
-                'Presidencia' => 'card-1',
-                'Secretaría' => 'card-2',
-                'Miembro' => 'card-3',
-                'Persona' => 'card-4'
-            ];
-
-            foreach ($datas as $row) {
-                foreach ($rolesMapping as $roleKey => $cardClass) {
-                    if (str_contains($row['rol'], $roleKey)) {
-                        ?>
+            foreach ($roles as $roleName => $cardClass) {
+                echo '<div class="Row">';
+                foreach ($datas as $row) {
+                    if (str_contains($row['rol'], $roleName)) {
+        ?>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
                             data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
                             data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
@@ -147,21 +139,19 @@
                                     <h3>
                                         <?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>
                                     </h3>
-                                </div>
-                                <div class="Nombres2">
                                     <h5>
                                         <?php echo $row['rol']; ?>
                                     </h5>
                                 </div>
                             </div>
                         </a>
-                        <?php
+        <?php
                     }
                 }
+                echo '</div>';
             }
         ?>
     </div>
-</div>
             
     <!-- #######################  Seccion de documentos ####################### -->
     <div class="titulo">
@@ -250,7 +240,9 @@
                         <p id="nombre"></p>
                     </div>
                     <div class="mb-3">
-                        <label for="cargo" class="form-label">Cargo:</label>
+                        <label for="cargo" class="form-label">
+                            Cargo:
+                        </label>
                         <p id="cargo"></p>
                     </div>
                     <div class="mb-3">
@@ -260,7 +252,9 @@
                     <div class="mb-3">
                         <label for="funcion" class="form-label">Funcion que Ejerce:</label>
                         <div class="button_funcion">
-                            <a href="#" id="redireccionarBtn">Función</a>
+                            <a href="#" target="_blank"  id="redireccionarBtn">
+                                Conoce Más
+                            </a>
                         </div>
                     </div>
                 </form>

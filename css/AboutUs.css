@@ -1,6 +1,4 @@
-* {
-    font-family: "Roboto", sans-serif;
-}
+
 
 .AboutUs{
     margin-top: 6%;
@@ -17,7 +15,7 @@
     color: #741731;
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: clamp(24px, 4vw + 1rem, 48px);
     width: 50%;
 }
 
@@ -30,7 +28,9 @@
 
 .InfoABS {
     width: 40%;
+    height: auto;
 }
+
 
 .InfoABS h3 {
     color: #1B396A;
