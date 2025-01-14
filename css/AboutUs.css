@@ -1,62 +1,85 @@
-
-
-.AboutUs{
-    margin-top: 6%;
-    margin-bottom: 6%;
-}
-
-.TitleABS {
+.AboutUs {
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+  
+  .TitleABS {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.TitleABS h2 {
+  }
+  
+  .TitleABS h2 {
     color: #741731;
     text-align: center;
     font-weight: bold;
     font-size: clamp(24px, 4vw + 1rem, 48px);
-    width: 50%;
-}
-
-.ContentABS {
+    width: 80%;
+  }
+  
+  .ContentABS {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-.InfoABS {
-    width: 40%;
-    height: auto;
-}
-
-
-.InfoABS h3 {
+    gap: 20px; /* Espacio entre los elementos */
+  }
+  
+  .InfoABS {
+    width: 100%; /* Ancho total en dispositivos pequeños */
+    max-width: 600px; /* Límite de ancho en dispositivos grandes */
+  }
+  
+  .InfoABS h3 {
     color: #1B396A;
     margin-bottom: 15px;
-    font-size: 30px;
-}
-
-.TextABS {
+    font-size: clamp(20px, 3vw, 30px); /* Tamaño de texto fluido */
+  }
+  
+  .TextABS {
     width: 100%;
     max-width: 700px;
     text-align: justify;
-    font-size: 15px;
-    font-weight: 400;
-}
-
-.ButtonABS a {
+    font-size: clamp(16px, 2.5vw, 20px); /* Tamaño de texto fluido */
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .ButtonABS a {
     text-decoration: none;
     background-color: #741731;
     color: white;
     border: none;
-    padding: 10px 40px;
+    padding: 10px 30px;
+    font-size: clamp(14px, 2.5vw, 16px); /* Ajuste fluido del texto del botón */
     border-radius: 12px;
-}
-
-.ButtonABS {
+  }
+  
+  .ButtonABS {
     margin-top: 20px;
     margin-bottom: 20px;
-}
+  }
+  
+  .ImgABS {
+    width: 100%; /* Ancho total en dispositivos pequeños */
+    max-width: 400px; /* Límite de ancho en dispositivos grandes */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ImgABS img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (min-width: 768px) {
+    .ContentABS {
+      flex-direction: row;
+    }
+  
+    .InfoABS, .ImgABS {
+      width: 40%; /* Dividir el espacio equitativamente en pantallas medianas */
+    }
+  }
 

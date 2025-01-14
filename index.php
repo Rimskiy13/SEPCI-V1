@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/Slider.css" />
     <link rel="stylesheet" href="css/AboutUs.css" />
     <link rel="stylesheet" href="css/Members.css" />
-    <link rel="stylesheet" href="css/Index.css" />
+    <link rel="stylesheet" href="css/DocumentsIndex.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
@@ -87,7 +87,7 @@
             ?>
         </ul>
     </div>
-            
+
     <!-- #######################  Seccion Acera de Nosotros  ####################### -->
     <div class="AboutUs">
         <div class="TitleABS">
@@ -112,7 +112,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- #######################  Directorio de miembros ####################### -->
     <div class="Directory">
         <div class="TitleMembers">
@@ -154,26 +154,32 @@
     </div>
             
     <!-- #######################  Seccion de documentos ####################### -->
-    <div class="titulo">
-        <h2>DOCUMENTOS DEL SEPCI</h2>
-    </div>
-
-    <div class="contenedor_pdftodo d-flex ">
-        <?php
-        include_once 'php/DBManager/endPointDocuments.php';
-        while ($row = $data->fetch_assoc()) {
-            ?>
-        <div class="contenedor-pdfs">
-            <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
-                <img src="img/pdf.png" alt="PDF 1">
-                <h3>
-                    <?php echo $row['name']; ?>
-                </h3>
-            </a>
+    <div class="Documents">
+        <div class="TitleDocuments">
+            <h2>Documentos del SEPCI</h2>
         </div>
-        <?php
-        }
-        ?>
+
+        <div class="ContainerPDF">
+            <?php
+            include_once 'php/DBManager/endPointDocuments.php';
+            while ($row = $data->fetch_assoc()) {
+                ?>
+            <div class="CardPDF">
+                <a href="#" onclick="location.href = '<?php echo 'pdf/Inicio/' . $row['root']; ?>';" target="_blank">
+                    <div class="ImagePDF">
+                        <img src="img/pdf.png" alt="<?php echo $row['name']; ?>">
+                    </div>
+                    <div class="NamePDF">
+                        <h3>
+                            <?php echo $row['name']; ?>
+                        </h3>
+                    </div>    
+                </a>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 
     <!-- #######################  Pie de pagina ####################### -->
@@ -217,7 +223,6 @@
     <script src="js/menu.js"></script>
     <script src="js/Slider.js"></script>
 </body>
-
 
 <!-- #######################  Modal para la seccion del directorio de miembros ####################### -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -268,5 +273,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+
 
 </html>

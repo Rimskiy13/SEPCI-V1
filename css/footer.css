@@ -1,22 +1,26 @@
 .footer {
   background-color: #1b396a;
   font-family: "Roboto", sans-serif;
-}
-.contenedor__contac {
-  padding: 20px 60px;
-  justify-content: right;
-}
-.texto {
-  background-color: #1b396a;
   color: #fff;
-  justify-content: center;
-  display: flex;
+  padding: 20px 0; /* Espaciado superior e inferior */
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
+  gap: 20px; /* Espaciado entre las columnas */
+  padding: 0 20px; /* Espaciado interno horizontal */
+}
+
 .text {
-  text-decoration: none;
-  color: #fff;
-  padding: 30px 30px;
-  display: flex;
+  flex: 1; /* Las columnas ocuparán el mismo espacio disponible */
+  min-width: 200px; /* Asegura un ancho mínimo */
+  max-width: 300px; /* Limita el ancho máximo */
+}
+
+.text p {
+  margin: 0; /* Elimina márgenes predeterminados */
 }
 
 .text a {
@@ -27,8 +31,58 @@
 }
 
 .text a:hover {
-  color: yellow;
+  color: #708FC0;
 }
-.container {
+
+.contenedor__contac {
+  flex: 1;
+  min-width: 300px; /* Asegura que el iframe no se encoja demasiado */
+}
+
+.contenedor__contac iframe {
+  width: 100%; /* El iframe se ajustará al ancho del contenedor */
+  height: 200px;
+  border: 0;
+}
+
+.texto {
+  background-color: #1b396a;
+  color: #fff;
+  justify-content: center;
   display: flex;
+  text-align: center;
+  padding: 10px 20px;
 }
+
+.texto p {
+  margin: 0;
+  font-size: 14px; /* Ajusta el tamaño del texto para pantallas pequeñas */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Coloca los elementos en una sola columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+  }
+
+  .text {
+    padding: 20px 0; /* Reduce el espacio lateral */
+  }
+
+  .contenedor__contac iframe {
+    height: 150px; /* Reduce la altura del mapa en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 14px; /* Reduce el tamaño del texto en pantallas más pequeñas */
+  }
+
+  .contenedor__contac iframe {
+    height: 120px; /* Ajusta aún más la altura del mapa */
+  }
+}
+

@@ -1,7 +1,8 @@
-/* ### Estilo general del directorio ### */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
 .Directory {
     padding: 20px;
-
 }
 
 .TitleMembers {
@@ -181,34 +182,79 @@
 
 
 /* #####################  Modal Para los miembros del subcomite #####################*/
-
+/* Imagen del miembro */
 .imagen-recuadrov {
-    display: flex;
-    width: 300%;
-    /* Elige el tamaño que prefieras */
-    height: auto;
-    object-fit: cover;
-    /* Para mantener la proporción de la imagen */
-    border-radius: 10%;
-    margin: 0;
-    padding: 0;
+  width: clamp(100px, 15vw, 200px); /* Tamaño dinámico */
+  height: auto; /* Mantener proporciones */
+  border-radius: 30%; /* Circular */
+  margin-bottom: 15px; /* Separación de otros elementos */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
+/* Texto y etiquetas */
+.modal-body label {
+  display: block; /* Asegura que cada etiqueta esté en una nueva línea */
+  font-weight: bold;
+  font-size: clamp(12px, 1.5vw, 16px); /* Fluidez en texto */
+  margin-bottom: 5px;
+}
+
+.modal-body p {
+  margin-bottom: 10px;
+  font-size: clamp(12px, 1.5vw, 14px);
+}
+
+/* Botón "Conoce Más" */
 .button_funcion a {
-    text-decoration: none;
-    background-color: rgba(27, 57, 106, 0.9);
-    color: white;
-    border: none;
-    padding: 10px 40px;
-    border-radius: 12px;
+  display: inline-block;
+  background-color: #1b396a;
+  color: #fff;
+  padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 20px); /* Padding dinámico */
+  border-radius: 8px;
+  font-size: clamp(12px, 1.5vw, 14px);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.imagen-recuadro {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+.button_funcion a:hover {
+  background-color: #3a6ea5;
+}
+
+/* Modal general */
+.modal-content {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Mejora la profundidad */
+  max-width: 600px; /* Limita el ancho máximo */
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+  }
+
+  .button_funcion a {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .imagen-recuadrov {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 10px;
+  }
+
+  .button_funcion a {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .imagen-recuadrov {
+    width: 70px;
+  }
 }
