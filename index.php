@@ -22,10 +22,10 @@
     <link rel="shortcut icon" href="img/logo-SEPCI.jpg" type="image/x-icon" />
     <!-- CSS -->
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/Slider.css" />
-    <link rel="stylesheet" href="css/AboutUs.css" />
-    <link rel="stylesheet" href="css/Members.css" />
-    <link rel="stylesheet" href="css/DocumentsIndex.css" />
+    <link rel="stylesheet" href="css/Index/Slider.css" />
+    <link rel="stylesheet" href="css/Index/AboutUs.css" />
+    <link rel="stylesheet" href="css/Index/Members.css" />
+    <link rel="stylesheet" href="css/DocumentsPDF.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
@@ -215,7 +215,7 @@
         </div>
         <div class="texto">
             <p>
-                &copy; Copyright 2023 TecNM Campus Morelia - Todos los Derechos
+                &copy; Copyright 2025 TecNM Campus Morelia - Todos los Derechos
                 Reservados
             </p>
         </div>

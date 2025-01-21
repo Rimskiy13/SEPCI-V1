@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffff;
   }
   
   .TitleABS h2 {
@@ -42,7 +43,7 @@
     text-align: justify;
     font-size: clamp(16px, 2.5vw, 20px); /* Tamaño de texto fluido */
     font-weight: 500;
-    font-family: "Roboto", sans-serif;
+    padding: 5%;
   }
   
   .ButtonABS a {
