@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
 
-    <title>Capacitate</title>
+    <title>Subcomite de Ética y de Prevención de Conflictos de Interés</title>
 
 
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+    <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/Capacitate/Courses.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/header.css" />
 </head>
 
 <body>

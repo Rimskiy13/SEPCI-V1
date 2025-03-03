@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Subcomite de Etica y de Prevencion de Conflictos de Interes</title>
+    <title>Subcomite de Ética y de Prevención de Conflictos de Interés</title>
     <link rel="icon" href="img/logo-SEPCI.png" />
     <link rel="shortcut icon" href="img/logo-SEPCI.jpg" type="image/x-icon" />
     <!-- CSS -->

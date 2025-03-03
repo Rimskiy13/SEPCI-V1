@@ -19,31 +19,36 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/funciones.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
 </head>
 
 <body>
-    <section class="Main_header">
-        <header>
-            <img src="img/logoEducacion.png" class="img1" />
-            <img src="img/Logo-TecNM.png" class="img2" />
-            <img src="img/logo-Itmorelia.png" class="img3" />
-            <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
-        </header>
-        <header class="Menu">
-            <div class="contenedor_menu">
-                <nav>
-                    <a class="active" href="index.php">Inicio</a>
-                    <a href="Capacitate.php">Capacitate</a>
-                    <a href="Documentos.php">Documentos</a>
-                    <a href="Buzon-de-atencion.html">Buzón de Atención</a>
-                    <a href="Contacto.html">Contacto</a>
-                </nav>
-            </div>
-        </header>
-    </section>
+<section class="Main_header">    
+      <header>
+          <div class="Logo_header">
+              <img src="img/logoEducacion.png" class="img1" />
+              <img src="img/Logo-TecNM.png" class="img2" />
+              <img src="img/logo-Itmorelia.png" class="img3" />
+              <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
+          </div>
+          <div class="Menu_header">            
+              <div class="contenedor_menu" id="contenedor_menu">
+                  <button class="hamburger" id="hamburger">
+                      &#9776; 
+                  </button>
+                  <nav class="Menu_nav" id="Menu_nav">
+                      <a href="index.php">Inicio</a>
+                      <a href="Capacitate.php">Capacitate</a>
+                      <a href="Documentos.php">Documentos</a>
+                      <a class="active" href="Buzon-de-atencion.html">Buzón de Atención</a>
+                      <a href="Contacto.html">Contacto</a>
+                  </nav>
+              </div>
+          </div>
+      </header>
+  </section>
     <section>
         <h3>3.1 Obligaciones de las y los Integrantes del Subcomité de Ética:</h3>
         <div class="content">

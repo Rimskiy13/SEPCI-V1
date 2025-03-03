@@ -6,38 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Capacitate</title>
-    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/buzon.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <script
-      src="https://kit.fontawesome.com/12dc2fa4a1.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   </head>
 
   <body>
-    <section class="Main_header">
+    <!-- #######################  Logos y Encabezado ####################### -->
+    <section class="Main_header">    
       <header>
-        <img src="img/logoEducacion.png" class="img1" />
-        <img src="img/Logo-TecNM.png" class="img2" />
-        <img src="img/logo-Itmorelia.png" class="img3" />
-        <img src="img/logo-SEPCI.png" class="img4" />
+          <div class="Logo_header">
+              <img src="img/logoEducacion.png" class="img1" />
+              <img src="img/Logo-TecNM.png" class="img2" />
+              <img src="img/logo-Itmorelia.png" class="img3" />
+              <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
+          </div>
+          <div class="Menu_header">            
+              <div class="contenedor_menu" id="contenedor_menu">
+                  <button class="hamburger" id="hamburger">
+                      &#9776; 
+                  </button>
+                  <nav class="Menu_nav" id="Menu_nav">
+                      <a href="index.php">Inicio</a>
+                      <a href="Capacitate.php">Capacitate</a>
+                      <a href="Documentos.php">Documentos</a>
+                      <a class="active" href="Buzon-de-atencion.html">Buzón de Atención</a>
+                      <a href="Contacto.html">Contacto</a>
+                  </nav>
+              </div>
+          </div>
       </header>
-      <header class="Menu">
-        <div class="contenedor_menu">
-          <nav>
-            <a href="index.php">Inicio</a>
-            <a href="Capacitate.php">Capacitate</a>
-            <a href="Documentos.php">Documentos</a>
-            <a class="active" href="Buzon-de-atencion.html"
-              >Buzón de Atención</a
-            >
-            <a href="Contacto.html">Contacto</a>
-          </nav>
-        </div>
-      </header>
-    </section>
+  </section>
 
     <div class="titulo">
       <br />
@@ -120,46 +120,44 @@
     </section>
 
     <script src="js/buzon.js"></script>
+    <!-- #######################  Pie de pagina ####################### -->
     <footer class="footer">
       <div class="container">
-        <div class="text">
-          <p>
-            <strong>Contacto</strong> <br />Email: <br />
-            cero.tolerancia@morelia.tecnm.mx
-            <br />
-            <br />
-            <strong>Dirección:</strong>
-            <br />
-            Av Morelos Nte 2550, Santiaguito, <br />
-            58110 Morelia, Mich.
-          </p>
-        </div>
-        <div class="text">
-          <p>
-            <strong>Enlaces</strong><br />
-            <a href="index.php">Inicio</a><br />
-            <a href="Capacitate.php">Capacitate</a><br />
-            <a href="Documentos.php">Documentos</a><br />
-            <a href="Buzon-de-atencion.html">Buzón de Atención</a><br />
-            <a href="Contacto.html">Contacto</a><br />
-          </p>
-        </div>
-        <div class="contenedor__contac">
-          <iframe
-            src="https://maps.google.com/maps?q=Instituto Tecnológico de Morelia&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            width="600"
-            height="200"
-            style="border: 0"
-            allowfullscreen=""
-          ></iframe>
-        </div>
+          <div class="text">
+              <p>
+                  <strong>Contacto</strong> <br />Email: <br />
+                  cero.tolerancia@morelia.tecnm.mx
+                  <br />
+                  <br />
+                  <strong>Dirección:</strong>
+                  <br />
+                  Av Morelos Nte 2550, Santiaguito, <br />
+                  58110 Morelia, Mich.
+              </p>
+          </div>
+          <div class="text">
+              <p>
+                  <strong>Enlaces</strong><br />
+                  <a href="index.php">Inicio</a><br />
+                  <a href="Capacitate.php">Capacitate</a><br />
+                  <a href="Documentos.php">Documentos</a><br />
+                  <a href="Buzon-de-atencion.html">Buzón de Atención</a><br />
+                  <a href="Contacto.html">Contacto</a><br />
+              </p>
+          </div>
+          <div class="contenedor__contac">
+              <iframe
+                  src="https://maps.google.com/maps?q=Instituto Tecnológico de Morelia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  width="600" height="200" style="border: 0" allowfullscreen=""></iframe>
+          </div>
       </div>
       <div class="texto">
-        <p>
-          &copy; Copyright 2023 TecNM Campus Morelia - Todos los Derechos
-          Reservados
-        </p>
+          <p>
+              &copy; Copyright 2025 TecNM Campus Morelia - Todos los Derechos
+              Reservados
+          </p>
       </div>
-    </footer>
+  </footer>
+  <script src="js/menu.js"></script>
   </body>
 </html>
