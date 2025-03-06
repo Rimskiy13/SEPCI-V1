@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-12-2023 a las 00:55:59
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.28
+-- Host: 127.0.0.1
+-- Generation Time: Mar 01, 2025 at 12:01 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,25 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sepci`
+-- Database: `sepci`
 --
+DROP DATABASE IF EXISTS `sepci`;
 CREATE DATABASE IF NOT EXISTS `sepci` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `sepci`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `about_us_info`
+-- Table structure for table `about_us_info`
 --
 
 CREATE TABLE `about_us_info` (
   `id_aboutus` int(11) NOT NULL,
   `information` mediumtext NOT NULL,
   `root_about_us` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `about_us_info`
+-- Dumping data for table `about_us_info`
 --
 
 INSERT INTO `about_us_info` (`id_aboutus`, `information`, `root_about_us`) VALUES
@@ -45,7 +46,7 @@ INSERT INTO `about_us_info` (`id_aboutus`, `information`, `root_about_us`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `complaints`
+-- Table structure for table `complaints`
 --
 
 CREATE TABLE `complaints` (
@@ -59,10 +60,10 @@ CREATE TABLE `complaints` (
   `evidence` varchar(100) DEFAULT NULL,
   `date` date NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `complaints`
+-- Dumping data for table `complaints`
 --
 
 INSERT INTO `complaints` (`id_complaint`, `full_name`, `mail`, `tel_number`, `full_nameA`, `positionA`, `succint`, `evidence`, `date`, `status`) VALUES
@@ -78,7 +79,7 @@ INSERT INTO `complaints` (`id_complaint`, `full_name`, `mail`, `tel_number`, `fu
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `courses`
+-- Table structure for table `courses`
 --
 
 CREATE TABLE `courses` (
@@ -88,19 +89,20 @@ CREATE TABLE `courses` (
   `root_course` varchar(30) NOT NULL,
   `tipo` varchar(11) NOT NULL,
   `contenido` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `courses`
+-- Dumping data for table `courses`
 --
 
 INSERT INTO `courses` (`id_course`, `course_name`, `course_descrip`, `root_course`, `tipo`, `contenido`) VALUES
-(31, 'Curso 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet urna magna, vel tempus dolor pulvinar at. Etiam dui nunc, varius sed ante a, varius ullamcorper arcu. Nunc gravida felis neque, a sollicitudin magna tempor vel. Phasellus est lorem, convallis in varius sollicitudin, mattis quis magna. Cras feugiat libero sit amet nisl bibendum, ac porttitor metus ornare. Duis bibendum aliquam augue, a sagittis nisi fermentum nec. ', '1/9teacher.ico', 'link', 'https://www.morelia.tecnm.mx/#/');
+(31, 'Curso 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet urna magna, vel tempus dolor pulvinar at. Etiam dui nunc, varius sed ante a, varius ullamcorper arcu. Nunc gravida felis neque, a sollicitudin magna tempor vel. Phasellus est lorem, convallis in varius sollicitudin, mattis quis magna. Cras feugiat libero sit amet nisl bibendum, ac porttitor metus ornare. Duis bibendum aliquam augue, a sagittis nisi fermentum nec. ', '1/9teacher.ico', 'link', 'https://www.morelia.tecnm.mx/#/'),
+(32, 'Curso Prueba', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet urna magna, vel tempus dolor pulvinar at. Etiam dui nunc, varius sed ante a, varius ullamcorper arcu. Nunc gravida felis neque, a sollicitudin magna tempor vel. Phasellus est lorem, convallis in varius sollicitudin, mattis quis magna. Cras feugiat libero sit amet nisl bibendum, ac porttitor metus ornare. Duis bibendum aliquam augue, a sagittis nisi fermentum nec.', '1/589teacher.ico', 'link', 'https://www.youtube.com/');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `documents`
+-- Table structure for table `documents`
 --
 
 CREATE TABLE `documents` (
@@ -109,10 +111,10 @@ CREATE TABLE `documents` (
   `root` varchar(250) DEFAULT NULL,
   `section` varchar(10) NOT NULL,
   `video` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `documents`
+-- Dumping data for table `documents`
 --
 
 INSERT INTO `documents` (`id_document`, `name`, `root`, `section`, `video`) VALUES
@@ -134,16 +136,16 @@ INSERT INTO `documents` (`id_document`, `name`, `root`, `section`, `video`) VALU
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `document_section`
+-- Table structure for table `document_section`
 --
 
 CREATE TABLE `document_section` (
   `id_docsec` int(11) NOT NULL,
   `name_section` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `document_section`
+-- Dumping data for table `document_section`
 --
 
 INSERT INTO `document_section` (`id_docsec`, `name_section`) VALUES
@@ -152,16 +154,16 @@ INSERT INTO `document_section` (`id_docsec`, `name_section`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `document_type`
+-- Table structure for table `document_type`
 --
 
 CREATE TABLE `document_type` (
   `id_doctp` int(11) NOT NULL,
   `type` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `document_type`
+-- Dumping data for table `document_type`
 --
 
 INSERT INTO `document_type` (`id_doctp`, `type`) VALUES
@@ -172,7 +174,7 @@ INSERT INTO `document_type` (`id_doctp`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `files`
+-- Table structure for table `files`
 --
 
 CREATE TABLE `files` (
@@ -182,19 +184,21 @@ CREATE TABLE `files` (
   `root` varchar(100) NOT NULL,
   `page_section` int(11) NOT NULL,
   `document_type` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `files`
+-- Dumping data for table `files`
 --
 
 INSERT INTO `files` (`id_file`, `id_docsec`, `name`, `root`, `page_section`, `document_type`) VALUES
-(1, NULL, 'Informe Anual de Actividades', '1/Fichas 20_10_23.pdf', 1, 1);
+(1, NULL, 'Manual de Atención de Denuncias ', '1/Manual_de_atencion_de_denuncias_en_los_CE_.pdf', 1, 1),
+(3, NULL, 'Código de Ética de APF', '3/Codigo_de_Etica_APF_2022.pdf', 1, 1),
+(4, NULL, 'Código de Ética del TecNM', '4/Codigo_de_Conducta_del_TecNM.pdf', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `members`
+-- Table structure for table `members`
 --
 
 CREATE TABLE `members` (
@@ -205,10 +209,10 @@ CREATE TABLE `members` (
   `mail` varchar(50) NOT NULL,
   `rol` varchar(50) NOT NULL,
   `root_image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `members`
+-- Dumping data for table `members`
 --
 
 INSERT INTO `members` (`id_members`, `names`, `middle_name`, `last_name`, `mail`, `rol`, `root_image`) VALUES
@@ -231,16 +235,16 @@ INSERT INTO `members` (`id_members`, `names`, `middle_name`, `last_name`, `mail`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `page_section`
+-- Table structure for table `page_section`
 --
 
 CREATE TABLE `page_section` (
   `id_pgsection` int(11) NOT NULL,
   `section_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `page_section`
+-- Dumping data for table `page_section`
 --
 
 INSERT INTO `page_section` (`id_pgsection`, `section_name`) VALUES
@@ -253,25 +257,27 @@ INSERT INTO `page_section` (`id_pgsection`, `section_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `slider`
+-- Table structure for table `slider`
 --
 
 CREATE TABLE `slider` (
   `id_slider` int(11) NOT NULL,
   `root_sliderImage` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `slider`
+-- Dumping data for table `slider`
 --
 
 INSERT INTO `slider` (`id_slider`, `root_sliderImage`) VALUES
-(5, '10/carrusel.png');
+(5, '10/carrusel.png'),
+(6, '12/andre-benz-e4xOmzd8vzg-unsplash.jpg'),
+(7, '35/SLIDER_ALERTADORES_1.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -279,10 +285,10 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id_user`, `name`, `mail`, `password`) VALUES
@@ -290,35 +296,35 @@ INSERT INTO `users` (`id_user`, `name`, `mail`, `password`) VALUES
 (2, 'ITM-Admin02', 'gallardoalfonso01@gmail.com', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `courses`
+-- Indexes for table `courses`
 --
 ALTER TABLE `courses`
   ADD PRIMARY KEY (`id_course`);
 
 --
--- Indices de la tabla `documents`
+-- Indexes for table `documents`
 --
 ALTER TABLE `documents`
   ADD PRIMARY KEY (`id_document`);
 
 --
--- Indices de la tabla `document_section`
+-- Indexes for table `document_section`
 --
 ALTER TABLE `document_section`
   ADD PRIMARY KEY (`id_docsec`);
 
 --
--- Indices de la tabla `document_type`
+-- Indexes for table `document_type`
 --
 ALTER TABLE `document_type`
   ADD PRIMARY KEY (`id_doctp`);
 
 --
--- Indices de la tabla `files`
+-- Indexes for table `files`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id_file`),
@@ -327,93 +333,93 @@ ALTER TABLE `files`
   ADD KEY `file_doctype` (`document_type`);
 
 --
--- Indices de la tabla `members`
+-- Indexes for table `members`
 --
 ALTER TABLE `members`
   ADD PRIMARY KEY (`id_members`);
 
 --
--- Indices de la tabla `page_section`
+-- Indexes for table `page_section`
 --
 ALTER TABLE `page_section`
   ADD PRIMARY KEY (`id_pgsection`);
 
 --
--- Indices de la tabla `slider`
+-- Indexes for table `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`id_slider`);
 
 --
--- Indices de la tabla `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `courses`
+-- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id_course` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_course` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT de la tabla `documents`
+-- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
   MODIFY `id_document` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de la tabla `document_section`
+-- AUTO_INCREMENT for table `document_section`
 --
 ALTER TABLE `document_section`
   MODIFY `id_docsec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `document_type`
+-- AUTO_INCREMENT for table `document_type`
 --
 ALTER TABLE `document_type`
   MODIFY `id_doctp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `files`
+-- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `members`
+-- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
   MODIFY `id_members` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de la tabla `page_section`
+-- AUTO_INCREMENT for table `page_section`
 --
 ALTER TABLE `page_section`
   MODIFY `id_pgsection` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `slider`
+-- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `files`
+-- Constraints for table `files`
 --
 ALTER TABLE `files`
   ADD CONSTRAINT `file_docsection` FOREIGN KEY (`id_docsec`) REFERENCES `document_section` (`id_docsec`) ON DELETE CASCADE ON UPDATE CASCADE,
